@@ -18,7 +18,7 @@ public class ShootingScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(0.5f,0.5f,0.0f));
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
             Instantiate(particleSystemPrefab,transform.position,transform.rotation);
             if (Physics.Raycast(ray, out hit)) 
             {
