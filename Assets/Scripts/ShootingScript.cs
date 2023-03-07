@@ -22,7 +22,10 @@ public class ShootingScript : MonoBehaviour
             Instantiate(particleSystemPrefab,transform.position,transform.rotation);
             if (Physics.Raycast(ray, out hit)) 
             {
-                // DO things
+                var turret = hit.collider.gameObject.GetComponent<TurretComponent>();
+                if (turret!=null) {
+                    turret.health -= 10;
+                }
             }
         }
     }
